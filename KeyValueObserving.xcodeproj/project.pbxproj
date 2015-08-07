@@ -14,6 +14,7 @@
 		0A432D6D1B744F99008D2733 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A432D6C1B744F99008D2733 /* Images.xcassets */; };
 		0A432D701B744F99008D2733 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A432D6E1B744F99008D2733 /* LaunchScreen.xib */; };
 		0A432D7C1B744F9A008D2733 /* KeyValueObservingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A432D7B1B744F9A008D2733 /* KeyValueObservingTests.m */; };
+		0A432D871B74515E008D2733 /* TVCTabelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A432D861B74515E008D2733 /* TVCTabelView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,8 @@
 		0A432D751B744F9A008D2733 /* KeyValueObservingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KeyValueObservingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A432D7A1B744F9A008D2733 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0A432D7B1B744F9A008D2733 /* KeyValueObservingTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KeyValueObservingTests.m; sourceTree = "<group>"; };
+		0A432D851B74515E008D2733 /* TVCTabelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TVCTabelView.h; sourceTree = "<group>"; };
+		0A432D861B74515E008D2733 /* TVCTabelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TVCTabelView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +92,8 @@
 				0A432D6C1B744F99008D2733 /* Images.xcassets */,
 				0A432D6E1B744F99008D2733 /* LaunchScreen.xib */,
 				0A432D5F1B744F99008D2733 /* Supporting Files */,
+				0A432D851B74515E008D2733 /* TVCTabelView.h */,
+				0A432D861B74515E008D2733 /* TVCTabelView.m */,
 			);
 			path = KeyValueObserving;
 			sourceTree = "<group>";
@@ -220,6 +225,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A432D681B744F99008D2733 /* ViewController.m in Sources */,
+				0A432D871B74515E008D2733 /* TVCTabelView.m in Sources */,
 				0A432D651B744F99008D2733 /* AppDelegate.m in Sources */,
 				0A432D621B744F99008D2733 /* main.m in Sources */,
 			);
