@@ -37,7 +37,9 @@
 -(void)InitKVO
 {
     AppDelegate* delegate=[UIApplication sharedApplication].delegate;
-    [delegate.dataTableView addObserver:self forKeyPath:@"count" options:NSKeyValueObservingOptionNew context:NULL];
+//    [delegate.dataTableView addObserver:self forKeyPath:@"count" options:NSKeyValueObservingOptionNew context:NULL];
+    
+    [delegate addObserver:self forKeyPath:@"dataTableView.count" options:NSKeyValueObservingOptionNew context:NULL];
 }
 
 -(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
