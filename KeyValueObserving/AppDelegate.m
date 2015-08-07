@@ -43,5 +43,29 @@
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+#pragma mark--key-value coding
 
+-(NSInteger)countOfDataTableView
+{
+    return [self.dataTableView count];
+}
+
+-(id)objectInDataTableViewAtIndex:(NSUInteger)index
+{
+    return [self.dataTableView objectAtIndex:index];
+}
+
+-(void)addDataTableViewObject:(id)object
+{
+    [self.dataTableView addObject:object];
+}
+-(void)removeDataTableViewObject:(id)object
+{
+    [self.dataTableView removeObject:object];
+}
+
+-(void)insertDataTableView:(NSArray *)array atIndexes:(NSIndexSet *)indexes
+{
+    [self.dataTableView insertObjects:array atIndexes:indexes];
+}
 @end
