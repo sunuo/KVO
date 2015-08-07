@@ -82,4 +82,16 @@
 {
     [self.dataTableView insertObjects:array atIndexes:indexes];
 }
+
+#pragma mark--manual change notification
++ (BOOL)automaticallyNotifiesObserversForKey:(NSString *)theKey {
+    BOOL automatic = NO;
+    if ([theKey isEqualToString:@"countOfDataTableView"]) {
+        automatic = NO;
+    }
+    else {
+        automatic = [super automaticallyNotifiesObserversForKey:theKey];
+    }
+    return automatic;
+}
 @end

@@ -41,7 +41,7 @@
     
 //    [delegate addObserver:self forKeyPath:@"dataTableView.count" options:NSKeyValueObservingOptionNew context:NULL];
     
-    [delegate addObserver:self forKeyPath:@"countOfDataTableView" options:NSKeyValueObservingOptionNew context:NULL];
+    [delegate addObserver:self forKeyPath:@"countOfDataTableView" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld context:NULL];
 }
 
 -(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
@@ -67,6 +67,10 @@
 {
     AppDelegate* delegate=[UIApplication sharedApplication].delegate;
 //    [delegate.dataTableView removeLastObject];
+    
+    if ([delegate countOfDataTableView]==0) {
+        return;
+    }
     
     [delegate removeDataTableViewObject:[delegate objectInDataTableViewAtIndex:[delegate countOfDataTableView]-1]];
     
