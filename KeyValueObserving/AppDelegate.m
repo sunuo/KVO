@@ -13,10 +13,10 @@
 @end
 
 @implementation AppDelegate
-@synthesize dataTableView;
+@synthesize dataTableView=_dataTableView;
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    self.dataTableView=[NSMutableArray arrayWithArray:@[@"0",@"1"]];
+    self.dataTableView=[NSMutableArray arrayWithArray:@[]];
     // Override point for customization after application launch.
     return YES;
 }
@@ -45,6 +45,11 @@
 }
 #pragma mark--key-value coding
 
+-(NSMutableArray*)dataTableView
+{
+    return _dataTableView;
+}
+
 -(NSInteger)countOfDataTableView
 {
     return [self.dataTableView count];
@@ -52,16 +57,25 @@
 
 -(id)objectInDataTableViewAtIndex:(NSUInteger)index
 {
+    
     return [self.dataTableView objectAtIndex:index];
 }
 
 -(void)addDataTableViewObject:(id)object
 {
+    [self willChangeValueForKey:@"countOfDataTableView"];
+    
     [self.dataTableView addObject:object];
+    
+    [self didChangeValueForKey:@"countOfDataTableView"];
 }
 -(void)removeDataTableViewObject:(id)object
 {
+    [self willChangeValueForKey:@"countOfDataTableView"];
+    
     [self.dataTableView removeObject:object];
+    
+    [self didChangeValueForKey:@"countOfDataTableView"];
 }
 
 -(void)insertDataTableView:(NSArray *)array atIndexes:(NSIndexSet *)indexes

@@ -56,7 +56,9 @@
 -(IBAction)btnAddClick:(id)sender
 {
     AppDelegate* delegate=[UIApplication sharedApplication].delegate;
-    [delegate.dataTableView addObject:[NSString stringWithFormat:@"%lu",[delegate.dataTableView count]]];
+//    [delegate.dataTableView addObject:[NSString stringWithFormat:@"%lu",[delegate.dataTableView count]]];
+    
+    [delegate addDataTableViewObject:[NSString stringWithFormat:@"%lu",[delegate.dataTableView count]]];
     
 //    [self.tableView reloadData];
 }
@@ -64,7 +66,9 @@
 -(IBAction)btnRemoveClick:(id)sender
 {
     AppDelegate* delegate=[UIApplication sharedApplication].delegate;
-    [delegate.dataTableView removeLastObject];
+//    [delegate.dataTableView removeLastObject];
+    
+    [delegate removeDataTableViewObject:[delegate objectInDataTableViewAtIndex:[delegate countOfDataTableView]-1]];
     
 //    [self.tableView reloadData];
 }
@@ -95,7 +99,7 @@
 -(NSMutableArray*)aryData
 {
     AppDelegate* delegate=[UIApplication sharedApplication].delegate;
-    return [NSMutableArray arrayWithArray:delegate.dataTableView];
+    return [delegate dataTableView];
 }
 /*
 // Override to support conditional editing of the table view.

@@ -18,5 +18,6 @@
 -(void)addDataTableViewObject:(id)object;
 -(void)removeDataTableViewObject:(id)object;
 -(void)insertDataTableView:(NSArray *)array atIndexes:(NSIndexSet *)indexes;
+-(NSMutableArray*)dataTableView;
 @end
 
