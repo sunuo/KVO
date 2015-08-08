@@ -80,6 +80,8 @@
 
 -(void)insertDataTableView:(NSArray *)array atIndexes:(NSIndexSet *)indexes
 {
+//    [self will]
+    
     [self.dataTableView insertObjects:array atIndexes:indexes];
 }
 

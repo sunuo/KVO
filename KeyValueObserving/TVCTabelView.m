@@ -41,7 +41,8 @@
     
 //    [delegate addObserver:self forKeyPath:@"dataTableView.count" options:NSKeyValueObservingOptionNew context:NULL];
     
-    [delegate addObserver:self forKeyPath:@"countOfDataTableView" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld context:NULL];
+    [delegate addObserver:self forKeyPath:@"countOfDataTableView" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld context:nil];
+    
 }
 
 -(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
@@ -50,7 +51,23 @@
     NSLog(@"object:::%@",NSStringFromClass([object class]));
     NSLog(@"change:::%@",change);
     
-    [self.tableView reloadData];
+    
+    
+    if([keyPath isEqualToString:@"countOfDataTableView"])
+    {
+        [self.tableView reloadData];
+    }
+    
+//    if([super respondsToSelector:@selector(observeValueForKeyPath:ofObject:change:context:)])
+//    {
+//        [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
+//    }
+}
+
+-(void)dealloc
+{
+    AppDelegate* delegate=[UIApplication sharedApplication].delegate;
+    [delegate removeObserver:self forKeyPath:@"countOfDataTableView"];
 }
 
 -(IBAction)btnAddClick:(id)sender
